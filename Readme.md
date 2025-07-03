@@ -1,10 +1,10 @@
-## Mindly : The Gamified Mental Health Tracker
+# Mindly : The Gamified Mental Health Tracker
 
 **Mindly** is a gamified mental health tracker designed to help users manage their emotional well-being through engaging, interactive features. By blending psychological tools with game mechanics, Mindly encourages consistent mental health tracking and provides positive reinforcement for healthy habits.
 
 ---
 
-# 🧠 Features
+## 🧠 Features
 
 - ✅ **Daily Mood Tracking** – Log and monitor your emotions over time.
 - 🎯 **Gamification Elements** – Earn points, unlock badges, and progress levels as you maintain your mental health streak.
@@ -27,7 +27,7 @@
 
 ## 📸 Screenshots
 
-# website building is in process.....
+### website building is in process.....
 ---
 
 ## 📦 Installation & Usage
