@@ -6,13 +6,13 @@
 
 ## 🧠 Features
 
-- ✅ **Daily Mood Tracking** – Log and monitor your emotions over time.
-- 🎯 **Gamification Elements** – Earn points, unlock badges, and progress levels as you maintain your mental health streak.
-- 📈 **Visual Reports** – Get weekly and monthly charts of your mental health stats.
-- 🔔 **Reminders & Notifications** – Gentle reminders to check in and reflect on your day.
-- 📝 **Journal Section** – A private space to write and reflect.
-- 📚 **Mental Health Tips** – Scientifically-backed tips and resources to support mental well-being.
-- 🎮 **Interactive Activities** – Breathing exercises, gratitude tasks, and mindfulness challenges.
+- ✅ **Daily Mood Tracking** : Log and monitor your emotions over time.
+- 🎯 **Gamification Elements** : Earn points, unlock badges, and progress levels as you maintain your mental health streak.
+- 📈 **Visual Reports** : Get weekly and monthly charts of your mental health stats.
+- 🔔 **Reminders & Notifications** : Gentle reminders to check in and reflect on your day.
+- 📝 **Journal Section** : A private space to write and reflect.
+- 📚 **Mental Health Tips** : Scientifically-backed tips and resources to support mental well-being.
+- 🎮 **Interactive Activities** : Breathing exercises, gratitude tasks, and mindfulness challenges.
 
 ---
 
