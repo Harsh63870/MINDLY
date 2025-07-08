@@ -4,8 +4,6 @@ const User = require('../models/User');
 const router = express.Router();
 
 const JWT_SECRET = 'your_jwt_secret'; 
-
-// Register
 router.post('/register', async (req, res) => {
   try {
     const { username, email, password } = req.body;
