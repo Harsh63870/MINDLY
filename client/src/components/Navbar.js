@@ -3,26 +3,22 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from './ui/Button';
 import ProfileDropdown from './ProfileDropdown';
 import './Navbar.css';
-
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
-
   useEffect(() => {
     const token = localStorage.getItem('token');
     const userData = localStorage.getItem('user');
-    
+  
     if (token && userData) {
       setIsLoggedIn(true);
       setUser(JSON.parse(userData));
     }
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -40,7 +36,7 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar-content">
           <Link to="/" className="navbar-brand">
-            <span className="brand-icon">��</span>
+            <span className="brand-icon"><img src="/mindlylogo.png" alt="Mindly Logo" className="brand-icon" style={{ height: 40 }} /></span>
             <span className="brand-text">Mindly</span>
           </Link>
 
@@ -50,7 +46,15 @@ const Navbar = () => {
                 <Link to="/dashboard" className="nav-link">Dashboard</Link>
                 <Link to="/mood-tracker" className="nav-link">Mood Tracker</Link>
                 <Link to="/achievements" className="nav-link">Achievements</Link>
-                <ProfileDropdown user={user} onLogout={handleLogout} />
+                {/* TEMP: Direct logout button for easy access */}
+                <Button
+                  variant="secondary"
+                  size="medium"
+                  onClick={handleLogout}
+                  style={{ marginLeft: '1rem' }}
+                >
+                  Logout
+                </Button>
               </>
             ) : (
               <>

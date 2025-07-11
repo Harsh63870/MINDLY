@@ -30,7 +30,6 @@ body {
   to { opacity: 0.3; }
 }
 
-/* Main container styling */
 .landing-container {
   max-width: 400px;
   margin: 60px auto;

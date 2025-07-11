@@ -63,14 +63,14 @@
 .auth-card {
   width: 100%;
   max-width: 450px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(218, 248, 97, 0.95);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .auth-header {
-  margin-bottom: 32px;
+  margin-bottom: 26px;
 }
 
 .auth-form {
@@ -99,10 +99,9 @@
   width: 100%;
 }
 
-/* Responsive adjustments */
 @media (max-width: 480px) {
   .auth-container {
-    padding: 16px;
+    padding: 24px;
   }
   
   .auth-card {

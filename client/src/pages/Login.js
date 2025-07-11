@@ -21,7 +21,6 @@ const Login = () => {
       ...prev,
       [name]: value
     }));
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -127,7 +126,7 @@ const Login = () => {
             {loading ? (
               <>
                 <LoadingSpinner size="small" color="primary" />
-                Signing In...
+                Signing In.....
               </>
             ) : (
               'Sign In'
@@ -147,5 +146,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
