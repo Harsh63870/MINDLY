@@ -3,6 +3,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 import './Dashboard.css';
+import Stars from "../components/Stars"; // Make sure to import
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
@@ -49,7 +50,12 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="dashboard-container">
+    <div className="dashboard-container fade-in">
+      <Stars />
+      <div className="planet-orbit">
+        <div className="planet-glossy"></div>
+        <div className="planet-shadow"></div>
+      </div>
       <div className="container">
         <div className="dashboard-header">
           <h1 className="text-3xl font-bold">Welcome back, {user?.username}!</h1>
@@ -76,7 +82,7 @@ const Dashboard = () => {
             </Button>
           </Card>
 
-          {/* Recent Moods */}
+          {}
           <Card className="recent-moods" shadow="medium" padding="large">
             <h2 className="text-xl font-semibold mb-4">Recent Moods</h2>
             {moodData.length > 0 ? (
@@ -96,7 +102,7 @@ const Dashboard = () => {
             )}
           </Card>
 
-          {/* Achievements */}
+          {}
           <Card className="achievements" shadow="medium" padding="large">
             <h2 className="text-xl font-semibold mb-4">Recent Achievements</h2>
             {achievements.length > 0 ? (
@@ -116,7 +122,7 @@ const Dashboard = () => {
             )}
           </Card>
 
-          {/* Quick Actions */}
+          {}
           <Card className="quick-actions" shadow="medium" padding="large">
             <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
             <div className="actions-grid">

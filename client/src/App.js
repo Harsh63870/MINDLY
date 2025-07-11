@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 
-// Place these imports here:
 import Landing from "./pages/Landing";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -11,7 +10,6 @@ import Profile from './pages/Profile';
 import './styles/main.css';
 import './App.css';
 
-// ...rest of your App.js code
 function App() {
   return (
     <Router>

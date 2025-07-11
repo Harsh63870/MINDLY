@@ -88,7 +88,7 @@ function Questionnaire() {
       setSelected([]);
       setCurrent(current + 1);
       setTransitioning(false);
-    }, 350); // match CSS transition duration
+    }, 350); 
   };
 
   if (current >= questions.length) {
