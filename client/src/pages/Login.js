@@ -5,7 +5,6 @@ import Input from '../components/ui/Input';
 import Card from '../components/ui/Card';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 import "../styles/Auth.css";
-
 const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -14,7 +13,6 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -28,23 +26,19 @@ const Login = () => {
       }));
     }
   };
-
   const validateForm = () => {
     const newErrors = {};
     if (!formData.email) newErrors.email = 'Email is required';
     if (!formData.password) newErrors.password = 'Password is required';
     return newErrors;
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = validateForm();
-    
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
-
     setLoading(true);
     try {
       const response = await fetch('http://localhost:5000/api/auth/login', {
@@ -54,9 +48,7 @@ const Login = () => {
         },
         body: JSON.stringify(formData),
       });
-
       const data = await response.json();
-
       if (response.ok) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
@@ -70,7 +62,6 @@ const Login = () => {
       setLoading(false);
     }
   };
-
   return (
     <div className="auth-container">
       <div className="auth-background">

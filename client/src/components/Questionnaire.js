@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/main.css";
 
 const questions = [
@@ -68,6 +68,32 @@ function Questionnaire() {
   const [answers, setAnswers] = useState([]);
   const [selected, setSelected] = useState([]);
   const [transitioning, setTransitioning] = useState(false);
+
+  const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    if (current >= questions.length && !sent) {
+      const user = JSON.parse(localStorage.getItem('user'));
+
+      fetch('/api/questionnaire/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userId: user && (user._id || user.id), 
+          answers: answers,
+        }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          setSent(true);
+          console.log(data.message);
+        })
+        .catch(err => {
+          setSent(true);
+          console.error('Failed to save answers:', err);
+        });
+    }
+  }, [current, answers, sent]);
 
   const handleOptionClick = (option) => {
     if (questions[current].multiple) {

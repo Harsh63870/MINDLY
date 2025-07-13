@@ -3,7 +3,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 import './Dashboard.css';
-import Stars from "../components/Stars"; // Make sure to import
+import Stars from "../components/Stars"; 
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
@@ -63,7 +63,7 @@ const Dashboard = () => {
         </div>
 
         <div className="dashboard-grid">
-          {/* Quick Mood Check */}
+          {}
           <Card className="mood-quick-check" shadow="medium" padding="large">
             <h2 className="text-xl font-semibold mb-4">Quick Mood Check</h2>
             <div className="mood-options">
@@ -71,7 +71,7 @@ const Dashboard = () => {
                 <button
                   key={index}
                   className="mood-option"
-                  onClick={() => {/* Handle mood selection */}}
+                  onClick={() => {}}
                 >
                   <span className="mood-emoji">{emoji}</span>
                 </button>
