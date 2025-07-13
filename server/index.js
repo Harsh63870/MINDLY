@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const app = express();
+const questionnaireRoutes = require('./routes/Questionnaire');
+app.use('/api/Questionnaire', questionnaireRoutes)
 app.use(cors());
 app.use(express.json());
 require('dotenv').config();

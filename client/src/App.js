@@ -9,7 +9,6 @@ import Dashboard from "./pages/Dashboard";
 import Profile from './pages/Profile';
 import './styles/main.css';
 import './App.css';
-
 function App() {
   return (
     <Router>
