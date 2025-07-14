@@ -175,9 +175,9 @@
 .planet-glossy {
   width: 100px;
   height: 100px;
-  background: radial-gradient(circle at 30% 30%, #ffe066 60%, #86a8e7 100%);
+  background: radial-gradient(circle at 30% 30%,#5771a1 60%, #86a8e7 100%);
   border-radius: 50%;
-  box-shadow: 0 0 16px 4px #ffe066, 0 0 32px 8px #86a8e7; /* reduced glow */
+  box-shadow: 0 0 16px 4px #5771a1, 0 0 32px 8px #5771a1; /* reduced glow */
   position: absolute;
   top: 10px;
   left: 10px;

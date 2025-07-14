@@ -112,7 +112,7 @@ body {
 .text-secondary { color: #080808; }
 .text-success { color: #35ffbc; }
 .text-danger { color: #ff2626; }
-.text-warning { color: #ffae21; }
+.text-warning { color: #279ce5; }
 
 /* Animations */
 @keyframes fadeIn {
@@ -168,7 +168,7 @@ body {
   
   .question-helper {
     font-size: 0.95rem;
-    color: #b76f6f;
+    color: #ffa9a9;
     margin-bottom: 0.5rem;
   }
   

@@ -2,7 +2,7 @@ import React from "react";
 import "./Stars.css"; 
 
 function Stars() {
-  const stars = Array.from({ length: 80 }).map((_, i) => {
+  const stars = Array.from({ length: 80 }).map((_, i) =>{
     const size = Math.random() * 2 + 1;
     const glow = Math.random() > 0.7 ? "star-glow" : "";
     return (

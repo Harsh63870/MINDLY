@@ -26,12 +26,12 @@
 
 .navbar .nav-link:hover,
 .navbar .brand-text:hover {
-  color: #ffe066;
-  text-shadow: 0 0 16px #ffe066, 0 0 32px #fff;
+  color: #3696ce;
+  text-shadow: 0 0 16px #5a96ce, 0 0 32px #fff;
 }
 
 .navbar-scrolled {
-  background: rgba(50, 131, 253, 0.95);
+  background: rgba(69, 112, 177, 0.95);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 .navbar-content {
