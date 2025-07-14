@@ -17,7 +17,7 @@
 }
 
 .star-glow {
-  box-shadow: 0 0 8px 3px #ffe066, 0 0 16px 6px #86a8e7, 0 0 24px 12px #6cbdbd; /* reduced glow */
+  box-shadow: 0 0 8px 3px #379bff, 0 0 16px 6px #86a8e7, 0 0 24px 12px #6cbdbd; /* reduced glow */
   filter: blur(0.3px) brightness(1.1); /* less blur and brightness */
 }
 

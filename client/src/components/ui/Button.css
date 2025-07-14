@@ -40,7 +40,7 @@
 
 .btn-primary:hover {
   background: linear-gradient(135deg, #86a8e7 0%, #6cbdbd 100%);
-  color: #ffe066;
+  color: #0a4c81;
   box-shadow: 0 6px 32px rgba(102, 126, 234, 0.25);
   transform: translateY(-2px) scale(1.04);
 }
