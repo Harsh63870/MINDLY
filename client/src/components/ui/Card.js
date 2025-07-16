@@ -1,15 +1,15 @@
+
 import React from 'react';
 import './Card.css';
-
-const Card = ({ 
-  children, 
-  className = '', 
-  shadow = 'medium',
-  padding = 'medium',
-  onClick 
+const Card = ({
+  children,
+  className='',
+  shadow='medium',
+  padding='medium',
+  onClick
 }) => {
   return (
-    <div 
+    <div
       className={`card card-${shadow} card-padding-${padding} ${className}`}
       onClick={onClick}
     >

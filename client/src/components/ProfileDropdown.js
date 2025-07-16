@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 
 function ProfileDropdown({ onLogout }) {
   const [open, setOpen] = useState(false);
@@ -28,4 +28,4 @@ function ProfileDropdown({ onLogout }) {
   );
 }
 
-export default ProfileDropdown;
+export default ProfileDropdown;*/
