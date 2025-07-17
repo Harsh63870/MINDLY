@@ -9,10 +9,8 @@ router.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
     let user = await User.findOne({ email });
     if (user) return res.status(400).json({ message: 'Email already exists' });
-
     user = new User({ username, email, password });
     await user.save();
-
     const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1d' });
     res.json({ token, user: { username: user.username, email: user.email } });
   } catch (err) {
@@ -34,7 +32,6 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
-
 router.get('/profile', async (req, res) => {
   const auth = req.headers.authorization;
   if (!auth) return res.status(401).json({ error: 'No token' });
