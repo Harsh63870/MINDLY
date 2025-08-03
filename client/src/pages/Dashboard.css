@@ -1,6 +1,9 @@
 .dashboard-container {
-  padding-top: 100px;
   min-height: 100vh;
+  padding: 2rem 0;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  position: relative;
+  overflow: hidden;
 }
 
 .dashboard-loading {
@@ -9,207 +12,210 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-top: 100px;
+  color: #fff;
+}
+
+.planet-orbit {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  animation: orbit 20s linear infinite;
+}
+
+.planet-glossy {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 30px rgba(67, 233, 123, 0.3);
+}
+
+.planet-shadow {
+  width: 80px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(5px);
+}
+
+@keyframes orbit {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to { transform: translateY(-50%) rotate(360deg); }
 }
 
 .dashboard-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.dashboard-header p {
+  font-size: 1.1rem;
+  color: #ccc;
 }
 
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  margin-bottom: 48px;
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
-/* Mood Quick Check */
+.mood-quick-check h2,
+.recent-moods h2,
+.achievements h2,
+.quick-actions h2 {
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
 .mood-options {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .mood-option {
-  background: none;
-  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 12px;
-  border-radius: 50%;
+  min-width: 80px;
 }
 
 .mood-option:hover {
-  transform: scale(1.2);
-  background: rgba(102, 126, 234, 0.1);
+  border-color: #2f55ff;
+  background: rgba(47, 85, 255, 0.1);
+  transform: scale(1.05);
 }
 
 .mood-emoji {
-  font-size: 32px;
-  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Recent Moods */
 .mood-history {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1rem;
 }
 
 .mood-entry {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px;
-  background: #f8f9fa;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #333;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.mood-entry:hover {
-  background: #11ff68;
-  transform: translateX(4px);
+.mood-entry .mood-emoji {
+  font-size: 1.5rem;
+  margin-bottom: 0;
 }
 
 .mood-details {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  flex: 1;
 }
 
 .mood-score {
-  font-weight: 600;
-  color: #667eea;
+  font-weight: bold;
+  color: #2f55ff;
 }
 
 .mood-date {
-  font-size: 12px;
-  color: #27ff67;
+  font-size: 0.9rem;
+  color: #ccc;
 }
 
-/* Achievements */
 .achievements-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .achievement-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #333;
   border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.achievement-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgb(45, 81, 237);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .achievement-icon {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .achievement-details {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex: 1;
 }
 
 .achievement-title {
-  font-weight: 600;
-  color: #1f2937;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.25rem;
 }
 
 .achievement-desc {
-  font-size: 12px;
-  color: #6b7280;
+  font-size: 0.9rem;
+  color: #ccc;
 }
 
 .actions-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
 .action-btn {
-  height: 48px;
-  font-size: 14px;
+  width: 100%;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
 }
 
 @media (max-width: 768px) {
-  .dashboard-container {
-    padding-top: 80px;
-  }
-  
   .dashboard-grid {
     grid-template-columns: 1fr;
   }
   
   .mood-options {
-    gap: 8px;
-  }
-  
-  .mood-emoji {
-    font-size: 24px;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
   
   .actions-grid {
     grid-template-columns: 1fr;
   }
-}
-.planet-orbit {
-  position: absolute;
-  top: 80px;
-  right: 10vw;
-  width: 120px;
-  height: 120px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.planet-glossy {
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle at 30% 30%,#5771a1 60%, #86a8e7 100%);
-  border-radius: 50%;
-  box-shadow: 0 0 16px 4px #5771a1, 0 0 32px 8px #5771a1; /* reduced glow */
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  animation: planet-float 4s ease-in-out infinite alternate;
-  overflow: hidden;
-}
-
-.planet-glossy::after {
-  content: "";
-  position: absolute;
-  top: 18px;
-  left: 28px;
-  width: 32px;
-  height: 18px;
-  background: rgba(255,255,255,0.35);
-  border-radius: 50%;
-  filter: blur(2px);
-  transform: rotate(-20deg);
-}
-
-.planet-shadow {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 70% 70%, rgba(0,0,0,0.18) 60%, transparent 100%);
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  pointer-events: none;
-}
-
-@keyframes planet-float {
-  from { transform: translateY(0px) scale(1);}
-  to { transform: translateY(-16px) scale(1.04);}
+  
+  .planet-orbit {
+    display: none;
+  }
 }
