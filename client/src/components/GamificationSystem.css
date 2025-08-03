@@ -1,0 +1,391 @@
+.gamification-system {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Level Card */
+.level-card {
+  background: linear-gradient(135deg, rgba(47, 85, 255, 0.1), rgba(67, 233, 123, 0.1));
+  border: 2px solid rgba(47, 85, 255, 0.2);
+}
+
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.level-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.level-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.level-number {
+  font-size: 1.8rem;
+}
+
+.level-details h3 {
+  color: #fff;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.2rem;
+}
+
+.level-details p {
+  color: #ccc;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.streak-info {
+  text-align: center;
+}
+
+.streak-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #ff6b6b, #ffa502);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.streak-icon {
+  font-size: 1.2rem;
+}
+
+.streak-count {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.streak-info p {
+  color: #ccc;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+/* Experience Bar */
+.experience-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.exp-progress {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.exp-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.exp-text {
+  color: #ccc;
+  font-size: 0.9rem;
+  min-width: 80px;
+}
+
+/* Challenges */
+.challenges-card h3 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.challenge-item {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.challenge-item:hover {
+  transform: translateY(-2px);
+  border-color: #2f55ff;
+  background: rgba(47, 85, 255, 0.1);
+}
+
+.challenge-item.completed {
+  border-color: #43e97b;
+  background: rgba(67, 233, 123, 0.1);
+}
+
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.challenge-header h4 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.completed-icon {
+  font-size: 1.2rem;
+}
+
+.challenge-item p {
+  color: #ccc;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.challenge-progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2f55ff, #43e97b);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  color: #ccc;
+  font-size: 0.8rem;
+  min-width: 50px;
+}
+
+.reward-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(67, 233, 123, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(67, 233, 123, 0.3);
+}
+
+.reward-icon {
+  font-size: 1rem;
+}
+
+.reward-text {
+  color: #43e97b;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Rewards Shop */
+.rewards-card h3 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.rewards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.reward-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.reward-item:hover {
+  transform: translateY(-2px);
+  border-color: #2f55ff;
+  background: rgba(47, 85, 255, 0.1);
+}
+
+.reward-item.unlocked {
+  border-color: #43e97b;
+  background: rgba(67, 233, 123, 0.05);
+}
+
+.reward-item.locked {
+  opacity: 0.6;
+}
+
+.reward-icon {
+  font-size: 2rem;
+  width: 50px;
+  text-align: center;
+}
+
+.reward-content {
+  flex: 1;
+}
+
+.reward-content h4 {
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.reward-content p {
+  color: #ccc;
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.reward-cost {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cost-icon {
+  font-size: 1rem;
+}
+
+.cost-amount {
+  color: #ffa502;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.claim-btn {
+  min-width: 80px;
+}
+
+/* Modals */
+.level-up-modal,
+.reward-modal {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 2px solid #2f55ff;
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  color: #fff;
+}
+
+.level-up-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.level-up-modal h2,
+.reward-modal h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.level-up-modal p,
+.reward-modal p {
+  color: #ccc;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.level-title {
+  color: #2f55ff !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.level-rewards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.level-rewards .reward-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.reward-icon-large {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.reward-description {
+  color: #43e97b !important;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .level-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .challenges-grid,
+  .rewards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reward-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .level-rewards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .level-up-modal,
+  .reward-modal {
+    padding: 2rem;
+  }
+}
