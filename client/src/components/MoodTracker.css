@@ -217,6 +217,108 @@
   color: #ccc;
 }
 
+/* Add these styles to the existing MoodTracker.css */
+
+.mood-stats-overview {
+  margin-bottom: 2rem;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.stats-header h2 {
+  color: #fff;
+  margin: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: #2f55ff;
+  background: rgba(47, 85, 255, 0.1);
+}
+
+.stat-icon {
+  font-size: 2rem;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Enhanced mood options */
+.mood-option {
+  position: relative;
+  overflow: hidden;
+}
+
+.mood-score {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-top: 0.25rem;
+}
+
+/* Enhanced mood history */
+.mood-activities-display {
+  margin-top: 0.5rem;
+}
+
+.activities-label {
+  color: #ccc;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.activities-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.activity-tag {
+  background: rgba(47, 85, 255, 0.1);
+  color: #2f55ff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  border: 1px solid rgba(47, 85, 255, 0.3);
+}
+
 @media (max-width: 768px) {
   .mood-content {
     grid-template-columns: 1fr;
@@ -224,5 +326,13 @@
   
   .mood-options {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

@@ -53,6 +53,7 @@ const Navbar = () => {
                 <Link to="/mood-tracker" className="nav-link">Mood Tracker</Link>
                 <Link to="/achievements" className="nav-link">Achievements</Link>
                 <Link to="/profile" className="nav-link">Profile</Link>
+                <Link to="/support" className="nav-link">Get Support</Link>
                 <Button
                   variant="secondary"
                   size="medium"
@@ -65,6 +66,7 @@ const Navbar = () => {
             ) : (
               <>
                 <Link to="/login" className="nav-link">Login</Link>
+                <Link to="/support" className="nav-link">Get Support</Link>
                 <Button 
                   variant="primary" 
                   size="medium"
