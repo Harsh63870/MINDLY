@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
+import GamificationSystem from '../components/GamificationSystem';
 import './Dashboard.css';
 import Stars from "../components/Stars"; 
 
@@ -11,6 +12,7 @@ const Dashboard = () => {
   const [moodData, setMoodData] = useState([]);
   const [achievements, setAchievements] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showGamification, setShowGamification] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [currentMood, setCurrentMood] = useState(null);
   const navigate = useNavigate();
@@ -85,6 +87,11 @@ const Dashboard = () => {
     { emoji: '😴', label: 'Tired', score: 6 }
   ];
 
+  const handleLevelUp = (newLevel) => {
+    // You can add additional level up logic here
+    console.log(`User reached level ${newLevel}!`);
+  };
+
   if (loading) {
     return (
       <div className="dashboard-loading">
@@ -106,6 +113,29 @@ const Dashboard = () => {
           <h1 className="text-3xl font-bold">Welcome back, {user?.username}!</h1>
           <p className="text-secondary text-lg">How are you feeling today?</p>
         </div>
+
+        {/* Gamification Toggle */}
+        <div className="gamification-toggle">
+          <Button 
+            variant="secondary" 
+            onClick={() => setShowGamification(!showGamification)}
+            className="toggle-btn"
+          >
+            {showGamification ? 'Hide' : 'Show'} Gamification
+          </Button>
+        </div>
+
+        {/* Gamification System */}
+        {showGamification && (
+          <GamificationSystem 
+            userStats={{
+              totalEntries: moodData.length,
+              averageScore: moodData.length > 0 ? 
+                moodData.reduce((sum, entry) => sum + entry.score, 0) / moodData.length : 0
+            }}
+            onLevelUp={handleLevelUp}
+          />
+        )}
 
         <div className="dashboard-grid">
           <Card className="mood-quick-check" shadow="medium" padding="large">

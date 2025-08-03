@@ -201,6 +201,26 @@
   animation: fadeIn 0.6s ease-out;
 }
 
+.gamification-toggle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.toggle-btn {
+  background: linear-gradient(135deg, #2f55ff, #43e97b);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(47, 85, 255, 0.3);
+}
+
 @media (max-width: 768px) {
   .dashboard-grid {
     grid-template-columns: 1fr;

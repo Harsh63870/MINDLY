@@ -82,17 +82,7 @@ const MoodTracker = () => {
     });
   }, [moodHistory]);
 
-  useEffect(() => {
-    fetchMoodHistory();
-  }, []);
-
-  useEffect(() => {
-    if (moodHistory.length > 0) {
-      calculateStats();
-    }
-  }, [moodHistory, calculateStats]);
-
-  const fetchMoodHistory = async () => {
+  const fetchMoodHistory = useCallback(async () => {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch('http://localhost:5000/api/mood/history', {
@@ -108,7 +98,17 @@ const MoodTracker = () => {
     } catch (error) {
       console.error('Error fetching mood history:', error);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchMoodHistory();
+  }, [fetchMoodHistory]);
+
+  useEffect(() => {
+    if (moodHistory.length > 0) {
+      calculateStats();
+    }
+  }, [moodHistory, calculateStats]);
 
   const handleMoodSelect = (mood) => {
     setCurrentMood(mood);

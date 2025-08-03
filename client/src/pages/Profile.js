@@ -13,6 +13,9 @@ const Profile = () => {
     username: '',
     email: ''
   });
+  const [showExportModal, setShowExportModal] = useState(false);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showNotificationModal, setShowNotificationModal] = useState(false);
 
   useEffect(() => {
     fetchUserData();
@@ -76,18 +79,77 @@ const Profile = () => {
         setUser(updatedUser);
         localStorage.setItem('user', JSON.stringify(updatedUser));
         setEditing(false);
+        alert('Profile updated successfully!');
       }
     } catch (error) {
       console.error('Error updating profile:', error);
+      alert('Failed to update profile. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    window.location.href = '/';
+    if (window.confirm('Are you sure you want to logout?')) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = '/';
+    }
+  };
+
+  // Export Data Function
+  const handleExportData = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch('http://localhost:5000/api/mood/history', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (response.ok) {
+        const moodData = await response.json();
+        
+        // Create CSV content
+        const csvContent = [
+          ['Date', 'Mood', 'Score', 'Notes', 'Activities'],
+          ...moodData.map(entry => [
+            new Date(entry.createdAt).toLocaleDateString(),
+            entry.mood,
+            entry.score,
+            entry.notes || '',
+            entry.activities ? entry.activities.join(', ') : ''
+          ])
+        ].map(row => row.map(field => `"${field}"`).join(',')).join('\n');
+
+        // Create and download file
+        const blob = new Blob([csvContent], { type: 'text/csv' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `mindly-mood-data-${new Date().toISOString().split('T')[0]}.csv`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        
+        setShowExportModal(false);
+        alert('Data exported successfully!');
+      }
+    } catch (error) {
+      console.error('Error exporting data:', error);
+      alert('Failed to export data. Please try again.');
+    }
+  };
+
+  // Privacy Settings Function
+  const handlePrivacySettings = () => {
+    setShowPrivacyModal(true);
+  };
+
+  // Notification Preferences Function
+  const handleNotificationPreferences = () => {
+    setShowNotificationModal(true);
   };
 
   if (loading) {
@@ -188,13 +250,25 @@ const Profile = () => {
           <Card className="profile-actions-card" shadow="medium" padding="large">
             <h2>Account Actions</h2>
             <div className="actions-grid">
-              <Button variant="secondary" className="action-btn">
+              <Button 
+                variant="secondary" 
+                className="action-btn"
+                onClick={() => setShowExportModal(true)}
+              >
                 Export Data
               </Button>
-              <Button variant="secondary" className="action-btn">
+              <Button 
+                variant="secondary" 
+                className="action-btn"
+                onClick={handlePrivacySettings}
+              >
                 Privacy Settings
               </Button>
-              <Button variant="secondary" className="action-btn">
+              <Button 
+                variant="secondary" 
+                className="action-btn"
+                onClick={handleNotificationPreferences}
+              >
                 Notification Preferences
               </Button>
               <Button 
@@ -208,6 +282,117 @@ const Profile = () => {
           </Card>
         </div>
       </div>
+
+      {/* Export Data Modal */}
+      {showExportModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>Export Your Data</h3>
+            <p>This will download all your mood tracking data as a CSV file.</p>
+            <div className="modal-actions">
+              <Button variant="secondary" onClick={() => setShowExportModal(false)}>
+                Cancel
+              </Button>
+              <Button variant="primary" onClick={handleExportData}>
+                Export Data
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Privacy Settings Modal */}
+      {showPrivacyModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>Privacy Settings</h3>
+            <div className="privacy-options">
+              <div className="privacy-option">
+                <label>
+                  <input type="checkbox" defaultChecked />
+                  Share anonymous data for research
+                </label>
+                <p>Help improve mental health research (no personal information shared)</p>
+              </div>
+              <div className="privacy-option">
+                <label>
+                  <input type="checkbox" defaultChecked />
+                  Allow data analytics
+                </label>
+                <p>Help us improve the app with usage analytics</p>
+              </div>
+              <div className="privacy-option">
+                <label>
+                  <input type="checkbox" />
+                  Public profile
+                </label>
+                <p>Allow other users to see your achievements (username only)</p>
+              </div>
+            </div>
+            <div className="modal-actions">
+              <Button variant="secondary" onClick={() => setShowPrivacyModal(false)}>
+                Cancel
+              </Button>
+              <Button variant="primary" onClick={() => {
+                alert('Privacy settings saved!');
+                setShowPrivacyModal(false);
+              }}>
+                Save Settings
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Notification Preferences Modal */}
+      {showNotificationModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>Notification Preferences</h3>
+            <div className="notification-options">
+              <div className="notification-option">
+                <label>
+                  <input type="checkbox" defaultChecked />
+                  Daily mood check reminders
+                </label>
+                <p>Get reminded to track your mood daily</p>
+              </div>
+              <div className="notification-option">
+                <label>
+                  <input type="checkbox" defaultChecked />
+                  Achievement notifications
+                </label>
+                <p>Get notified when you earn new achievements</p>
+              </div>
+              <div className="notification-option">
+                <label>
+                  <input type="checkbox" />
+                  Weekly progress reports
+                </label>
+                <p>Receive weekly summaries of your mood journey</p>
+              </div>
+              <div className="notification-option">
+                <label>
+                  <input type="checkbox" />
+                  Motivational messages
+                </label>
+                <p>Receive encouraging messages and tips</p>
+              </div>
+            </div>
+            <div className="modal-actions">
+              <Button variant="secondary" onClick={() => setShowNotificationModal(false)}>
+                Cancel
+              </Button>
+              <Button variant="primary" onClick={() => {
+                alert('Notification preferences saved!');
+                setShowNotificationModal(false);
+              }}>
+                Save Preferences
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
