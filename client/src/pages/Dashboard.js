@@ -195,7 +195,7 @@ const Dashboard = () => {
               <Button 
                 variant="secondary" 
                 className="action-btn"
-                onClick={() => navigate('/profile')}
+                onClick={() => navigate('/support')}
               >
                 Get Support
               </Button>
