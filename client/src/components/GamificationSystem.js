@@ -23,7 +23,7 @@ const GamificationSystem = ({ userStats, onLevelUp }) => {
     // Bonus experience for high scores
     if (avgScore >= 8) exp += totalEntries * 5;
     if (avgScore >= 9) exp += totalEntries * 10;
-    
+    if (avgScore == 10) exp += totalEntries *10;
     // Streak bonus
     const streakBonus = Math.min(streak * 5, 50);
     exp += streakBonus;
