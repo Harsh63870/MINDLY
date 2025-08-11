@@ -8,28 +8,13 @@ The application features a modern, responsive interface with mood tracking, gami
 
 ## Screenshots
 
-### Landing Page & Authentication
 ![Landing Page](./client/screenshots/Screenshot%202025-08-11%20230120.png)
-
-### User Dashboard
 ![Dashboard](./client/screenshots/Screenshot%202025-08-11%20230151.png)
-
-### Mood Tracking Interface
 ![Mood Tracker](./client/screenshots/Screenshot%202025-08-11%20230108.png)
-
-### Gamification & Achievements
 ![Gamification System](./client/screenshots/Screenshot%202025-08-11%20230040.png)
-
-### Mood Analytics & Charts
 ![Mood Analytics](./client/screenshots/Screenshot%202025-08-11%20230212.png)
-
-### User Profile & Settings
 ![User Profile](./client/screenshots/Screenshot%202025-08-11%20230223.png)
-
-### Additional Features
 ![Additional Features](./client/screenshots/Screenshot%202025-08-11%20230250.png)
-
-### Application Overview
 ![App Overview](./client/screenshots/Screenshot%202025-08-11%20230138.png)
 
 *These screenshots showcase the current development progress of Mindly, featuring the landing page, user dashboard, mood tracking system, gamification elements, and various user interface components.*
