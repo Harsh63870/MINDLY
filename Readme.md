@@ -185,12 +185,7 @@ The application features a modern, responsive interface with mood tracking, gami
 
 5. **Database Setup**
    
-   **Option A: Local MongoDB**
-   - Install MongoDB locally
-   - Start MongoDB service
-   - Create database named 'mindly'
-   
-   **Option B: MongoDB Atlas**
+   **MongoDB Atlas**
    - Create free MongoDB Atlas account
    - Create new cluster
    - Get connection string and update MONGODB_URI
@@ -227,14 +222,14 @@ The application features a modern, responsive interface with mood tracking, gami
 
 ## Team Members
 
-- **Harsh** - Project Lead & Full Stack Developer
+- **Harsh Vardhan Pandey** - Project Lead & Full Stack Developer
   - GitHub: [@Harsh63870](https://github.com/Harsh63870)
   - Role: Project architecture, backend development, database design
 
 ---
 
 **Project Status:** Active Development  
-**Last Updated:** December 2024  
+**Last Updated:** August 2025 
 **Version:** 1.0.0  
 
 ---
