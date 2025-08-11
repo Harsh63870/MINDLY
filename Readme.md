@@ -8,22 +8,31 @@ The application features a modern, responsive interface with mood tracking, gami
 
 ## Screenshots
 
-### Landing Page
-![Landing Page](https://via.placeholder.com/800x400/4A90E2/FFFFFF?text=Mindly+Landing+Page)
+### Landing Page & Authentication
+![Landing Page](./client/screenshots/Screenshot%202025-08-11%20230120.png)
 
-### Dashboard
-![Dashboard](https://via.placeholder.com/800x400/50C878/FFFFFF?text=Mindly+Dashboard)
+### User Dashboard
+![Dashboard](./client/screenshots/Screenshot%202025-08-11%20230151.png)
 
-### Mood Tracker
-![Mood Tracker](https://via.placeholder.com/800x400/FF6B6B/FFFFFF?text=Mood+Tracking+Interface)
+### Mood Tracking Interface
+![Mood Tracker](./client/screenshots/Screenshot%202025-08-11%20230108.png)
 
-### Gamification System
-![Gamification](https://via.placeholder.com/800x400/9B59B6/FFFFFF?text=Gamification+System)
+### Gamification & Achievements
+![Gamification System](./client/screenshots/Screenshot%202025-08-11%20230040.png)
 
-### Achievements
-![Achievements](https://via.placeholder.com/800x400/F39C12/FFFFFF?text=Achievement+System)
+### Mood Analytics & Charts
+![Mood Analytics](./client/screenshots/Screenshot%202025-08-11%20230212.png)
 
-*Note: Actual screenshots will be added once the application is fully developed and deployed.*
+### User Profile & Settings
+![User Profile](./client/screenshots/Screenshot%202025-08-11%20230223.png)
+
+### Additional Features
+![Additional Features](./client/screenshots/Screenshot%202025-08-11%20230250.png)
+
+### Application Overview
+![App Overview](./client/screenshots/Screenshot%202025-08-11%20230138.png)
+
+*These screenshots showcase the current development progress of Mindly, featuring the landing page, user dashboard, mood tracking system, gamification elements, and various user interface components.*
 
 ## Hosted URL
 
